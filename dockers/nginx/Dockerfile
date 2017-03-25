@@ -4,4 +4,4 @@ FROM nginx:alpine
 
 MAINTAINER Yaroslav Solokha <yaroslav.solokha@gmail.com>
 
-ADD default.conf symfony.conf symfony_demo.conf /etc/nginx/conf.d/
+ADD default.conf /etc/nginx/conf.d/
