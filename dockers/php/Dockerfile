@@ -22,4 +22,4 @@ RUN chmod a+x /usr/local/bin/symfony
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-WORKDIR /app
+WORKDIR /app/projects
