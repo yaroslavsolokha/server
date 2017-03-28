@@ -11,6 +11,9 @@ RUN docker-php-ext-install intl
 # Install Opcache
 RUN docker-php-ext-install opcache
 
+# Install additional MySQL driver
+RUN docker-php-ext-install pdo_mysql
+
 # Add php.ini
 ADD php.ini /usr/local/etc/php/
 

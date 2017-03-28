@@ -37,3 +37,25 @@ $ cd demo
 $ composer update
 ```
 ##### 4. Check symfony.dev:8000 and demo.dev:8000
+#### Joomla
+##### 1. Create project
+```
+$ cd server/projects
+$ git clone https://github.com/joomla/joomla-cms.git
+```
+##### 2. Add joomla.dev to you hosts
+##### 3. Build docker
+```
+$ cd server
+$ docker-compose stop
+$ docker-compose -f docker-compose.yml -f joomla.yml build
+$ docker-compose -f docker-compose.yml -f joomla.yml up
+```
+##### 4. Update
+```
+$ cd server
+$ docker exec -it php /bin/sh
+$ cd joomla-cms
+$ composer update
+```
+##### 5. Check joomla.dev:8000, setup, host - 172.19.0.1, administrator panel - http://joomla.dev:8000/administrator/
