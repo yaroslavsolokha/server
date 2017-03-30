@@ -4,4 +4,4 @@ FROM nginx:alpine
 
 MAINTAINER Yaroslav Solokha <yaroslav.solokha@gmail.com>
 
-ADD default.conf /etc/nginx/conf.d/
+ADD conf.d/* /etc/nginx/conf.d/
