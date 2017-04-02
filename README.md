@@ -110,4 +110,10 @@ $ docker-compose up
 ```
 ##### 6. Open http://magento.dev:8000/setup/
 ##### 7. Setup, manually create db, host - 172.19.0.1
-##### 8. Check www.magento.dev:8000 and admin panel - magento.dev:8000/XXX
+##### 8. Reindex
+ ```
+ $ cd server
+ $ docker exec -it php-7.0 /bin/sh
+ $ php bin/magento indexer:reindex
+ ```
+##### 9. Check www.magento.dev:8000 and admin panel - magento.dev:8000/XXX
