@@ -4,21 +4,9 @@ FROM php:fpm-alpine
 
 MAINTAINER Yaroslav Solokha <yaroslav.solokha@gmail.com>
 
-# Install intl
 RUN apk add --update --no-cache --repository http://dl-3.alpinelinux.org/alpine/edge/main icu icu-libs icu-dev libpng-dev
-RUN docker-php-ext-install intl
 
-# Install Opcache
-RUN docker-php-ext-install opcache
-
-# Install additional MySQLi driver
-RUN docker-php-ext-install mysqli
-
-# Install additional MySQL driver
-RUN docker-php-ext-install pdo_mysql
-
-# Install gd
-RUN docker-php-ext-install gd
+RUN docker-php-ext-install intl opcache mysqli pdo_mysql gd
 
 # Add php.ini
 ADD php.ini /usr/local/etc/php/

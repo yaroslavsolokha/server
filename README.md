@@ -41,7 +41,7 @@ $ composer update
 $ cd server/projects
 $ git clone https://github.com/joomla/joomla-cms.git
 ```
-##### 2. Add joomla.dev to you hosts
+##### 2. Add joomla.dev to your hosts
 ##### 3. Up docker
 ```
 $ cd server
@@ -62,7 +62,7 @@ $ composer update
 $ cd server/projects
 $ git clone https://github.com/WordPress/WordPress.git
 ```
-##### 2. Add wordpress.dev to you hosts
+##### 2. Add wordpress.dev to your hosts
 ##### 3. Up docker
 ```
 $ cd server
@@ -75,7 +75,7 @@ $ docker-compose up
 $ cd server/projects
 $ git clone https://github.com/drupal/drupal.git
 ```
-##### 2. Add drupal.dev to you hosts
+##### 2. Add drupal.dev to your hosts
 ##### 3. Up docker
 ```
 $ cd server
@@ -90,4 +90,24 @@ $ cd drupal
 $ composer install
 $ composer update
 ```
-##### 5. Check drupal.dev:8000, setup, host - 172.19.0.1, administrator panel - http://joomla.dev:8000/administrator/
+##### 5. Check drupal.dev:8000, setup, host - 172.19.0.1
+#### Magento
+##### 1. Register, go - http://account.magento.com
+##### 2. Create secure keys
+##### 3. Add magento.dev and www.magento.dev to your hosts
+##### 4. Create project
+```
+$ cd server
+$ docker exec -it php-7.0 /bin/sh
+$ composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition magento
+$ username - public key, password - private key
+```
+##### 5. Up docker
+```
+$ cd server
+$ docker-compose stop
+$ docker-compose up
+```
+##### 6. Open http://magento.dev:8000/setup/
+##### 7. Setup, manually create db, host - 172.19.0.1
+##### 8. Check www.magento.dev:8000 and admin panel - magento.dev:8000/XXX

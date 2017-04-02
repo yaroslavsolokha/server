@@ -23,11 +23,24 @@ services:
       - ./:/app
     links:
       - php
+      - php-7.0
+  # last version of php
   php:
     build: ./dockers/php
     container_name: php
     ports:
       - 9000:9000
+    volumes:
+      - ./:/app
+    links:
+      - db
+  # for magento http://devdocs.magento.com/guides/v2.1/install-gde/system-requirements-tech.html
+  # php version 7.0.*
+  php-7.0:
+    build: ./dockers/php-7.0
+    container_name: php-7.0
+    ports:
+      - 9001:9000
     volumes:
       - ./:/app
     links:
