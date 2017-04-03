@@ -9,11 +9,12 @@ $ cd server
 $ docker-compose build
 $ docker-compose up
 ```
-##### 4. Check Nginx, PHP, PHPMyAdmin
+##### 4. Check Nginx, PHP, PHPMyAdmin, Redmine
 ```
 localhost:8000
 localhost:8000/phpinfo.php
 localhost:8010
+localhost:8080 admin/admin
 ```
 #### Symfony
 ##### 1. Add symfony.dev and demo.dev to your hosts
@@ -117,3 +118,55 @@ $ docker-compose up
  $ php bin/magento indexer:reindex
  ```
 ##### 9. Check www.magento.dev:8000 and admin panel - magento.dev:8000/XXX
+#### Mediawiki
+##### 1. Create project
+```
+$ cd server/projects
+$ git clone https://github.com/wikimedia/mediawiki.git
+```
+##### 2. Add mediawiki.dev to your hosts
+##### 3. Up docker
+```
+$ cd server
+$ docker-compose stop
+$ docker-compose up
+```
+##### 4. Update
+```
+$ cd server
+$ docker exec -it php /bin/sh
+$ cd mediawiki
+$ composer update
+```
+##### 5. Setup, open - http://mediawiki.dev:8000/, host - 172.19.0.1, add LocalSettings.php to mediawiki root directory, add wfLoadSkin( 'Vector' ); to LocalSettings.php
+##### 6. Add skin
+```
+$ cd server/projects/mediawiki/skins
+$ git clone https://gerrit.wikimedia.org/r/mediawiki/skins/Vector
+```
+#### Redmine
+##### 1. Create project
+```
+$ cd server/projects
+$ git clone https://github.com/redmine/redmine.git
+```
+##### 2. Add redmine.dev to your hosts
+##### 3. Up docker
+```
+$ cd server
+$ docker-compose stop
+$ docker-compose up
+```
+##### 4. Update
+```
+$ cd server
+$ docker exec -it php /bin/sh
+$ cd mediawiki
+$ composer update
+```
+##### 5. Setup, open - http://mediawiki.dev:8000/, host - 172.19.0.1, add LocalSettings.php to mediawiki root directory, add wfLoadSkin( 'Vector' ); to LocalSettings.php
+##### 6. Add skin
+```
+$ cd server/projects/mediawiki/skins
+$ git clone https://gerrit.wikimedia.org/r/mediawiki/skins/Vector
+```

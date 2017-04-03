@@ -7,11 +7,25 @@ services:
       - 3306:3306
     environment:
       MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./dockers/mysql/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     container_name: phpmyadmin
     ports:
       - "8010:80"
+    links:
+      - db
+  redmine:
+    image: redmine
+    container_name: redmine
+    ports:
+      - 8080:3000
+    environment:
+      - REDMINE_DB_MYSQL=db
+      - REDMINE_DB_USERNAME=root
+      - REDMINE_DB_PASSWORD=root
+      - REDMINE_DB_DATABASE=redmine
     links:
       - db
   nginx:
