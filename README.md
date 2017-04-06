@@ -9,12 +9,11 @@ $ cd server
 $ docker-compose build
 $ docker-compose up
 ```
-##### 4. Check Nginx, PHP, PHPMyAdmin, Redmine
+##### 4. Check Nginx, PHP, PHPMyAdmin
 ```
 localhost:8000
 localhost:8000/phpinfo.php
 localhost:8010
-localhost:8080 admin/admin
 ```
 #### Symfony
 ##### 1. Add symfony.dev and demo.dev to your hosts
