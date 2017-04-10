@@ -15,6 +15,9 @@ localhost:8000
 localhost:8000/phpinfo.php
 localhost:8010
 ```
+#### Parameters
+##### PHPMyAdmin - root/root
+##### Check your host - check $_SERVER['REMOTE_ADDR'] in localhost:8000/phpinfo.php
 #### Symfony
 ##### 1. Add symfony.dev and demo.dev to your hosts
 ##### 2. Up docker
@@ -55,7 +58,7 @@ $ cd joomla-cms
 $ composer install
 $ composer update
 ```
-##### 5. Check joomla.dev:8000, setup, host - 172.19.0.1, administrator panel - http://joomla.dev:8000/administrator/
+##### 5. Check joomla.dev:8000, setup, administrator panel - http://joomla.dev:8000/administrator/
 #### WordPress
 ##### 1. Create project
 ```
@@ -68,7 +71,7 @@ $ git clone https://github.com/WordPress/WordPress.git
 $ cd server
 $ docker-compose up
 ```
-##### 4. Check wordpress.dev:8000, setup, manually create db, host - 172.19.0.1
+##### 4. Check wordpress.dev:8000, setup, manually create db
 #### Drupal
 ##### 1. Create project
 ```
@@ -90,7 +93,7 @@ $ cd drupal
 $ composer install
 $ composer update
 ```
-##### 5. Check drupal.dev:8000, setup, host - 172.19.0.1
+##### 5. Check drupal.dev:8000, setup
 #### Magento
 ##### 1. Register, go - http://account.magento.com
 ##### 2. Create secure keys
@@ -109,7 +112,7 @@ $ docker-compose stop
 $ docker-compose up
 ```
 ##### 6. Open http://magento.dev:8000/setup/
-##### 7. Setup, manually create db, host - 172.19.0.1
+##### 7. Setup, manually create db
 ##### 8. Reindex
  ```
  $ cd server
@@ -137,33 +140,7 @@ $ docker exec -it php /bin/sh
 $ cd mediawiki
 $ composer update
 ```
-##### 5. Setup, open - http://mediawiki.dev:8000/, host - 172.19.0.1, add LocalSettings.php to mediawiki root directory, add wfLoadSkin( 'Vector' ); to LocalSettings.php
-##### 6. Add skin
-```
-$ cd server/projects/mediawiki/skins
-$ git clone https://gerrit.wikimedia.org/r/mediawiki/skins/Vector
-```
-#### Redmine
-##### 1. Create project
-```
-$ cd server/projects
-$ git clone https://github.com/redmine/redmine.git
-```
-##### 2. Add redmine.dev to your hosts
-##### 3. Up docker
-```
-$ cd server
-$ docker-compose stop
-$ docker-compose up
-```
-##### 4. Update
-```
-$ cd server
-$ docker exec -it php /bin/sh
-$ cd mediawiki
-$ composer update
-```
-##### 5. Setup, open - http://mediawiki.dev:8000/, host - 172.19.0.1, add LocalSettings.php to mediawiki root directory, add wfLoadSkin( 'Vector' ); to LocalSettings.php
+##### 5. Setup, open - http://mediawiki.dev:8000/, add LocalSettings.php to mediawiki root directory, add wfLoadSkin( 'Vector' ); to LocalSettings.php
 ##### 6. Add skin
 ```
 $ cd server/projects/mediawiki/skins

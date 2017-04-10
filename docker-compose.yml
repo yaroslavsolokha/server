@@ -20,7 +20,8 @@ services:
     ports:
       - 8000:80
     volumes:
-      - ./:/app
+      # for docker which supports cached, if not support - remove ":cached"
+      - ./:/app:cached
     links:
       - php
       - php-7.0
@@ -31,7 +32,8 @@ services:
     ports:
       - 9000:9000
     volumes:
-      - ./:/app
+      # for docker which supports cached, if not support - remove ":cached"
+      - ./:/app:cached
     links:
       - db
   # for magento http://devdocs.magento.com/guides/v2.1/install-gde/system-requirements-tech.html
@@ -42,6 +44,7 @@ services:
     ports:
       - 9001:9000
     volumes:
-      - ./:/app
+      # for docker which supports cached, if not support - remove ":cached"
+      - ./:/app:cached
     links:
       - db

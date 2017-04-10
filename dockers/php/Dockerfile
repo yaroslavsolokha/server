@@ -12,9 +12,6 @@ RUN docker-php-ext-install intl opcache mysqli pdo_mysql xsl zip gd
 RUN pecl install redis xdebug
 RUN docker-php-ext-enable redis xdebug
 
-# Add php.ini
-ADD php.ini /usr/local/etc/php/
-
 # Symfony Installer
 RUN mkdir -p /usr/local/bin
 RUN curl -LsS https://symfony.com/installer -o /usr/local/bin/symfony
@@ -22,5 +19,8 @@ RUN chmod a+x /usr/local/bin/symfony
 
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+# Add php.ini
+ADD php.ini /usr/local/etc/php/
 
 WORKDIR /app/projects
