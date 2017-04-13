@@ -20,6 +20,15 @@ RUN chmod a+x /usr/local/bin/symfony
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
+# Install NodeJS, NPM
+RUN apk update && apk add nodejs
+
+# Install Bower
+RUN npm install -g bower
+
+# Install git
+RUN apk update && apk add git
+
 # Add php.ini
 ADD php.ini /usr/local/etc/php/
 
