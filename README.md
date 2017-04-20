@@ -1,5 +1,5 @@
 ### Docker setup
-Docker environment include last versions of PHP, Nginx, MySQL.
+Docker environment include last versions of PHP, Nginx, MySQL, PHPMyAdmin, MediaWiki.
 #### Base server
 ##### 1. Install Docker - https://docs.docker.com/compose/install/
 ##### 2. Clone repository and configure shared paths in Docker
