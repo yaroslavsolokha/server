@@ -29,16 +29,6 @@ RUN npm install -g bower
 # Install git
 RUN apk update && apk add git
 
-# Install yarn
-ENV PATH /root/.yarn/bin:$PATH
-RUN apk update \
-  && apk add curl bash binutils tar \
-  && rm -rf /var/cache/apk/* \
-  && /bin/bash \
-  && touch ~/.bashrc \
-  && curl -o- -L https://yarnpkg.com/install.sh | bash \
-  && apk del curl tar binutils
-
 # Add php.ini
 ADD php.ini /usr/local/etc/php/
 

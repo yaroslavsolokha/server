@@ -6,3 +6,7 @@ projects/joomla-cms
 projects/drupal
 projects/magento
 projects/mediawiki
+projects/symfony-test
+projects/ysuserbundle
+dockers/nginx/conf.d/ysuserbundle.conf
+dockers/nginx/conf.d/symfony-test.conf
