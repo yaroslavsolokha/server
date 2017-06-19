@@ -9,6 +9,7 @@ projects/mediawiki
 projects/symfony-test
 projects/ysuserbundle
 projects/ysblogbundle
+projects/ysdiscussbundle
 dockers/nginx/conf.d/ysuserbundle.conf
 dockers/nginx/conf.d/symfony-test.conf
 dockers/nginx/conf.d/ysblogbundle.conf
